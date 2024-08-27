@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .titulo-destaque {
+      @apply font-black text-5xl;
+    }
+    .titulo {
+        @apply font-bold text-[2.5rem];
+    }
+    .titulo-secao {
+        @apply font-semibold text-[2rem];
+    }
+    .subtitulo {
+        @apply font-medium text-[1.75rem];
+    }
+    .subtitulo-secao {
+        @apply font-medium text-[1.43rem];
+    }
+    .paragrafo {
+        @apply font-regular text-base;
+    }
+    .legenda {
+        @apply font-light text-sm;
+    }
+  }
