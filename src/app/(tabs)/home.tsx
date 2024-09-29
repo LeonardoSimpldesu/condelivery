@@ -2,7 +2,7 @@ import { Button } from "@/components/button";
 import { colors } from "@/styles/colors";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
-import { Image, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { Image, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 export default function HomePage() {
     const renderStars = (rating: number) => {
@@ -13,7 +13,7 @@ export default function HomePage() {
             ))
     }
     return (
-        <SafeAreaView className="flex-1 px-6">
+        <SafeAreaView className="flex-1 px-6 bg-white">
             <View className="flex-1">
                 <View className="mb-4">
                     <Text className="text-xl font-semibold">Seus Pedidos Ativos</Text>
@@ -111,7 +111,7 @@ export default function HomePage() {
                                 <Text className="font-bold text-lg">Leonardo de Souza</Text>
                                 <View className="flex-row items-center">
                                     {renderStars(4)}
-                                    <Text className="ml-2">{(4).toFixed(1)}</   Text>
+                                    <Text className="ml-2">{(4).toFixed(1)}</Text>
                                 </View>
                             </View>
                             <MaterialCommunityIcons name="chevron-right" className="ml-auto" size={24} />
@@ -119,11 +119,11 @@ export default function HomePage() {
                     </View>
                 </ScrollView>
             </View>
-            <Link href={'/(colaborator)/collaborator/(active)/'} asChild>
-                <Button className="flex-row items-center justify-center gap-2 my-6">
+            <Link href={'/orders/active'} asChild>
+                <TouchableOpacity className="flex-row items-center justify-center gap-2 my-6 w-full rounded-lg py-3 px-8 text-center border bg-pumpkin border-pumpkin">
                     <MaterialCommunityIcons name="package-variant-closed" size={16} color={'white'} />
                     <Text className="text-white">Listar pedidos ativos</Text>
-                </Button>
+                </TouchableOpacity>
             </Link>
         </SafeAreaView>
     )

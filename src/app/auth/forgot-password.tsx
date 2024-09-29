@@ -3,21 +3,15 @@ import { Button } from "@/components/button";
 import { Input } from "@/components/input";
 
 import Entypo from '@expo/vector-icons/Entypo';
-import { Link } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { Image, Text, View } from "react-native";
 
 
 export default function ForgotPassword(){
     return(
-        <View className="flex-1 items-center px-4">
-            <Header>
-                <Link replace href={"/(auth)"}>
-                    <Entypo name="chevron-left" size={24} color="black" className="absolute" />
-                </Link>
-                <Text className="flex-grow text-center subtitulo">
-                    Esqueci minha senha
-                </Text>
-            </Header>
+        <View className="flex-1 items-center px-4 bg-white">
+            <Stack.Screen options={{ headerTitle: 'Esqueci minha senha' }} />
+
             <Text className="mb-24 mt-20 subtitulo text-center">DIGITE SEU E-MAIL PARA REDEFINIR SUA SENHA</Text>
             <View className="w-full mb-auto gap-10">
                 <View className="w-full items-center">

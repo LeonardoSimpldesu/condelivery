@@ -1,6 +1,6 @@
 import "@/styles/global.css"
 import { Slot } from "expo-router"
-
+import { Stack } from 'expo-router/stack';
 import { StatusBar, View } from "react-native"
 import {
     useFonts,
@@ -23,20 +23,19 @@ export default function Layout() {
         Inter_600SemiBold,
         Inter_700Bold,
         Inter_900Black
-      })
-    
-      if (!fontsLoaded) {
+    })
+
+    if (!fontsLoaded) {
         return <Loading />
-      }
+    }
 
     return (
-        <View className="flex-1">
-            <StatusBar
-                barStyle="light-content"
-                backgroundColor="transparent"
-                translucent
-            />
-            <Slot />
-        </View>
+        <Stack
+            screenOptions={{
+                headerTitleAlign: 'center',
+            }}
+        >
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
+        </Stack>
     )
 }

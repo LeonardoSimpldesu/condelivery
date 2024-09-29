@@ -1,7 +1,7 @@
 import { Button } from "@/components/button";
 import { colors } from "@/styles/colors";
 import { Feather, FontAwesome6 } from "@expo/vector-icons";
-import { Link } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { Alert, ScrollView, StatusBar, Text, TouchableOpacity, View } from "react-native";
 
 export default function Notifications() {
@@ -21,17 +21,11 @@ export default function Notifications() {
     }
 
     return (
-        <View className="flex-1 p-8">
+        <View className="flex-1 p-8 bg-white">
             <StatusBar barStyle='dark-content' />
-            <View className="w-full flex-row items-center justify-between py-8">
-                <Link href='/' asChild>
-                    <FontAwesome6 name="chevron-left" size={18} color={colors["smoky-black"]} />
-                </Link>
-                <Text className="text-xl text-black_olive font-boldw">Notificações</Text>
-                <FontAwesome6 name="check" size={18} color={"#ffffff"} />
-            </View>
+            <Stack.Screen options={{headerTitle: 'Notificações'}} />
             <ScrollView showsVerticalScrollIndicator={false} className="w-full">
-                <View className="mt-6">
+                <View className="">
                     <Text className="text-xl font-boldw">Entregas e pedidos</Text>
                     <View>
                         <View className="w-full flex-row items-center justify-between py-6 border-b-[0.5px] border-silver">
