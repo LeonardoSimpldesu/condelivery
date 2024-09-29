@@ -39,7 +39,11 @@ export default function SignUp(){
                     </View>
                 </View>
                 
-                <Button text="Entrar" buttonClassName="py-4 mb-2"/>
+                <Button className="py-4 mb-2">
+                    <Text className="text-lg text-white font-bold mx-auto">
+                        Entrar
+                    </Text>
+                </Button>
             </View>
         </View>
     )

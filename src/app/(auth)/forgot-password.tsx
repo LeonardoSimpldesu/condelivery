@@ -18,7 +18,7 @@ export default function ForgotPassword(){
                     Esqueci minha senha
                 </Text>
             </Header>
-            <Text className="mb-24 mt-20 subtitulo text-center">SEJA BEM-VINDO AO CONDELIVERY</Text>
+            <Text className="mb-24 mt-20 subtitulo text-center">DIGITE SEU E-MAIL PARA REDEFINIR SUA SENHA</Text>
             <View className="w-full mb-auto gap-10">
                 <View className="w-full items-center">
                     <View className="w-full gap-4">
@@ -31,7 +31,11 @@ export default function ForgotPassword(){
                     </View>
                 </View>
                 
-                <Button text="Enviar" buttonClassName="py-4 mb-2"/>
+                <Button className="py-4 mb-2">
+                        <Text className="text-lg text-white font-bold mx-auto">
+                            Enviar
+                        </Text>
+                    </Button>
             </View>
         </View>
     )

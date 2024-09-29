@@ -2,8 +2,8 @@ import { Header } from "@/components/auth/header";
 import { Button } from "@/components/button";
 import { Input } from "@/components/input";
 import { Link } from "expo-router";
-import { Image, Text, View } from "react-native";
-
+import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
+import Feather from '@expo/vector-icons/Feather';
 
 export default function SignIn(){
     return(
@@ -23,16 +23,32 @@ export default function SignIn(){
                         </Input> 
                         <Input variant="credentials" credencialText="Senha">
                             <Input.Field/>
+                            <Feather name="eye" size={24} color="black" className="absolute right-4 top-5"/>
                         </Input> 
                     </View>
                     <Link href={'/(auth)/forgot-password'} className="mt-6 text-silver font-light">Esqueci minha senha</Link>
                 </View>
 
                 <View className="w-full mt-auto gap-4 text-center items-center">
-                    <Button text="Entrar" buttonClassName="py-4 mb-2"/>
-                    <Button text="Google" type="secondary"/>
-                    <Button text="Facebook" type="secondary"/>
+                    <Link href='/home' asChild>
+                        <Button className="py-4 mb-2">
+                            <Text className="text-lg text-white font-bold mx-auto">
+                                Entrar
+                            </Text>
+                        </Button>
+                    </Link>
+                    <Button type="secondary">
+                        <Text className="text-lg font-bold mx-auto">
+                            Google
+                        </Text>
+                    </Button>
+                    <Button type="secondary">
+                        <Text className="text-lg font-bold mx-auto">
+                            Facebook
+                        </Text>
+                    </Button>
                     <Link href={'/(auth)/sing-up'} className="mt-8 text-silver font-light">Não possui uma conta? Cadastrar</Link>
+                    {/* <Link href={'/(auth)/condominium-token'} className="mt-8 text-silver font-light">Condoiminio</Link> */}
                 </View>
             </View>
         </View>

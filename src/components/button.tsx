@@ -1,31 +1,25 @@
+import { ReactNode } from "react";
 import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { twMerge } from 'tailwind-merge'
 
 type ButtonProps = TouchableOpacityProps & {
-    text: string
-    type?: 'primary' | 'secondary'
-    buttonClassName?: string
-    textClassName?: string
+    type?: 'primary' | 'secondary' | 'destructive'
+    className?: string
+    children: ReactNode
 }
 
-export function Button({ text, type = 'primary', buttonClassName, textClassName, ...rest }: ButtonProps) {
+export function Button({ type = 'primary', className, children, ...rest }: ButtonProps) {
     return (
         <TouchableOpacity className={twMerge(
             'w-full rounded-lg py-3 px-8 text-center border ',
             type == 'primary' && 'bg-pumpkin border-pumpkin',
             type == 'secondary' && 'bg-white border-davy-gray',
-            buttonClassName,
+            type == 'destructive' && 'bg-chili-red border-chili-red',
+            className,
         )}
         {...rest}
         >
-            <Text className={twMerge(
-                "mx-auto subtitulo-secao",
-                type == 'primary' && 'text-white',
-                type == 'secondary' && 'text-smoky-black',
-                textClassName,
-            )}>
-                {text}
-            </Text>
+            {children}
         </TouchableOpacity>
     )
 }
